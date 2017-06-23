@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="TataApp.Views.LoginPage" 
+    Title="Login" 
+    BackgroundColor="White"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+	<ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}">
+            <StackLayout
+                Spacing="0"
+                Padding="0">
+                <StackLayout
+                BackgroundColor="{StaticResource LoginColor}"
+                Padding="0">
+                    <Image 
+                        BackgroundColor="Transparent"
+                        Source="tata.png">
+                    </Image>
+                    <ActivityIndicator
+                      Color="{StaticResource AccentColor2}"
+                      IsRunning="{Binding IsRunning}">
+                    </ActivityIndicator>
+                </StackLayout>
+                <StackLayout
+                    Padding="40,0,40,0">
+                    <Label
+                        Text="Login"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        TextColor="{StaticResource FontColor}">
+                    </Label>
+                    <Entry
+                                Text="{Binding Email}"
+                                Placeholder="Enter you email."
+                                Keyboard="Email"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                BackgroundColor="{StaticResource BackgroundColor}">
+                    </Entry>
+                    <Entry
+                                Text="{Binding Password}"
+                                Placeholder="Enter you password"
+                                IsPassword="True"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="Center"
+                                BackgroundColor="{StaticResource BackgroundColor}">
+                    </Entry>
+                </StackLayout>
+                <StackLayout
+                    Padding="30,0,30,0"
+                    Orientation="Horizontal">
+                    <Switch
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        IsToggled="{Binding IsRemembered}">
+                    </Switch>
+                    <Label
+                        FontSize="Large"
+                        Text="Rememberme"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Center"
+                        TextColor="{StaticResource FontColor}">
+                    </Label>
+                </StackLayout>
+                <StackLayout
+                    Padding="30,0,30,0"
+                    Orientation="Vertical">
+                    <Button
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="{StaticResource MainColor}"
+                        TextColor="{StaticResource FontColor}"
+                        HeightRequest="40"
+                        BorderRadius="20"
+                        Text="Login">
+                    </Button>
+                    <Button
+                        Command="{Binding LoginFacebookCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="{StaticResource MainColor}"
+                        TextColor="{StaticResource FontColor}"
+                        HeightRequest="40"
+                        BorderRadius="20"
+                        Text="Login With Facebook">
+                    </Button>
+                    <Label
+                        FontSize="Large"
+                        Text="Forgot your password?"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        TextColor="{StaticResource FontColor2}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Button
+                        Command="{Binding RegisterCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        VerticalOptions="Center"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="{StaticResource BColor1}"
+                        TextColor="{StaticResource BackgroundColor}"
+                        HeightRequest="40"
+                        BorderRadius="20"
+                        Text="Register New User">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>	
+    </ContentPage.Content>
+</ContentPage>

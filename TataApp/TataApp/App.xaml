@@ -1,10 +1,34 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TataApp.App">
-	<Application.Resources>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:infra="clr-namespace:TataApp.Infrastructure;assembly=TataApp"
+    x:Class="TataApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
 
-		<!-- Application resource dictionary -->
+            <!-- Locator -->
+            <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
 
-	</Application.Resources>
+            <!-- Parameters -->
+            <x:String x:Key="URLAPI">http://tataappapi.azurewebsites.net</x:String>
+            <x:String x:Key="URLBackend">http://tataappbackend.azurewebsites.net</x:String>
+
+            <!-- Colors -->
+            <Color x:Key="MainColor">#2585C2</Color>
+            <Color x:Key="AccentColor1">#2585C2</Color>
+            <Color x:Key="AccentColor2">#6095FF</Color>
+            <Color x:Key="BackgroundColor">#FFFFFF</Color>
+            <Color x:Key="LoginColor">#2585C2</Color>
+            <Color x:Key="FontColor">#DBDBDB</Color>
+            <Color x:Key="FontColor2">#2585C2</Color>
+            <Color x:Key="EntryColor">#404040</Color>
+            <Color x:Key="BColor1">#00DD35</Color>
+
+            <!-- Menu colors -->
+            <Color x:Key="MenuColor">#2585C2</Color>
+            <Color x:Key="MenuFontColor">#DBDBDB</Color>
+
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
